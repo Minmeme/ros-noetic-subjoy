@@ -101,7 +101,7 @@ class JoyReceiver:
             if input_id != self.last_data:
                 rospy.loginfo(f"Publishing: {message} (ID: {input_id})")
                 self.last_data = input_id
-                self.websocket_client.publish(message)  # Send as string
+                self.websocket_client.publish(input_id)  # Send as string
 
         except IndexError as e:
             rospy.logwarn(f"Index error in joystick input: {e}")
